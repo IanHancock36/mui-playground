@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
+import React from 'react'
+import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
+import ErrorScreen from './pages/error-screen';
 
-function App() {
-  return <Button variant="contained">Hello World</Button>;
+export default function App() {
+return (
+  <MainPage />
+)
 }
-
-
-export default App;
