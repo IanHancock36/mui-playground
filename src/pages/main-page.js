@@ -14,6 +14,7 @@ import { css } from '@emotion/react';
 import CameraEnhanceIcon from '@mui/icons-material/CameraEnhance';
 import MediaCard from '../components/media-card'
 import SearchBar from '../components/search-bar'
+import { Home, HomeMax, HomeMaxRounded, TravelExplore } from '@mui/icons-material';
 
 const MainPage = () => {
   return (
@@ -21,18 +22,18 @@ const MainPage = () => {
       <CssBaseline />
       <AppBar position='relative'>
         <Toolbar css={css`background-color: #2e8b57; color: #fff;`}>
-          <CameraEnhanceIcon onClick={() => console.log("CLICKED")} />
-          <Typography variant="h6" css={css`margin-left:5px`}>Travel Photos</Typography>
+          <TravelExplore onClick={() => console.log("CLICKED")} />
+          <Typography variant="h6" css={css`margin-left:5px`}>Mock Company</Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div>
           <Container maxWidth="sm" css={css`margin-top:100px`}>
             <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-              My Album
+              Company Directory 
             </Typography>
             <Typography variant="h5" align='center' color="textSecondary" paragraph>
-              Hey! Thank you for taking a look at my photo album for my fictional travels.
+              Search Our Wonderful Team Members
             </Typography>
             <div>
               <Grid container justifyContent="center">
