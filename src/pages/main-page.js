@@ -11,10 +11,10 @@ import {
   TextField
 } from '@mui/material';
 import { css } from '@emotion/react';
-import CameraEnhanceIcon from '@mui/icons-material/CameraEnhance';
 import MediaCard from '../components/media-card'
 import SearchBar from '../components/search-bar'
-import { Home, HomeMax, HomeMaxRounded, TravelExplore } from '@mui/icons-material';
+import { TravelExplore } from '@mui/icons-material';
+import MOCK_DATA from '../db/MOCK_DATA.json'
 
 const MainPage = () => {
   return (
@@ -30,7 +30,7 @@ const MainPage = () => {
         <div>
           <Container maxWidth="sm" css={css`margin-top:100px`}>
             <Typography variant="h2" align="center" color="textPrimary" gutterBottom>
-              Company Directory 
+              Company Directory
             </Typography>
             <Typography variant="h5" align='center' color="textSecondary" paragraph>
               Search Our Wonderful Team Members
@@ -45,9 +45,11 @@ const MainPage = () => {
         <div>
           <Container maxWidth="lg" css={css`margin-top:100px`} >
             <Grid container spacing={4} align='center'>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
+              {MOCK_DATA.map(cardInfo => (
+                <Grid item key={cardInfo.id} xs={12} sm={6} md={4}>
+                  <MediaCard cardInfo={cardInfo} />
+                </Grid>
+              ))}
             </Grid>
           </Container>
         </div>
