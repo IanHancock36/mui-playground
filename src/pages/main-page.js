@@ -37,7 +37,7 @@ const MainPage = () => {
             </Typography>
             <div>
               <Grid container justifyContent="center">
-                <SearchBar align='center' />
+              <SearchBar />
               </Grid>
             </div>
           </Container>
