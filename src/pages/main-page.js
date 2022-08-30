@@ -48,30 +48,6 @@ const MainPage = () => {
               <Grid item xs={12} sm={6} md={4}>
                 <MediaCard />
               </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
-              <Grid item xs={12} sm={6} md={4}>
-                <MediaCard />
-              </Grid>
             </Grid>
           </Container>
         </div>
