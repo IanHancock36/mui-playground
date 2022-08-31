@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-export default function MediaCard({ cardInfo, }) {
+export default function MediaCard({ cardInfo, handleOpen }) {
   return (
     <Card sx={{ maxWidth: 345, minHeight: 250 }}>
       <Avatar alt="Team Member Avatars" src={cardInfo.photo} variant="rounded" />
@@ -18,7 +18,7 @@ export default function MediaCard({ cardInfo, }) {
           {cardInfo.job_title}
         </Typography>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button onClick={handleOpen} size="small">Learn More</Button>
         </CardActions>
       </CardContent>
     </Card>
