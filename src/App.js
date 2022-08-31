@@ -5,9 +5,8 @@ import MainPage from './pages/main-page';
 import Slider from  './pages/slider'
 import MediaCard from './components/media-card'
 export default function App() {
-return (
+
+  return (
   <MainPage />
-  // <Slider/>
-  // <MediaCard /> 
 )
 }

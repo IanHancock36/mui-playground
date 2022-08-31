@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope -- Unaware of jsxImportSource */
 /** @jsxImportSource @emotion/react */
-import React from 'react'
+import React, { useState } from 'react'
 import {
   Typography,
   AppBar,
@@ -8,15 +8,26 @@ import {
   Toolbar,
   Container,
   Grid,
-  TextField
 } from '@mui/material';
 import { css } from '@emotion/react';
 import MediaCard from '../components/media-card'
 import SearchBar from '../components/search-bar'
 import { TravelExplore } from '@mui/icons-material';
-import MOCK_DATA from '../db/MOCK_DATA.json'
+import teamData from '../db/MOCK_DATA.json'
 
+const filterTeamMembers = (teamData, searchedTeamMembers) => {
+  if (!searchedTeamMembers) {
+    return teamData;
+  }
+  return teamData.filter((teamMember) => {
+    const teamMemberName = teamMember.first_name.toLowerCase();
+    return teamMemberName.includes(searchedTeamMembers);
+  });
+};
 const MainPage = () => {
+  const [searchedTeamMembers, setSearchedTeamMembers] = useState("");
+  const filteredTeamData = filterTeamMembers(teamData, searchedTeamMembers);
+
   return (
     <>
       <CssBaseline />
@@ -37,7 +48,10 @@ const MainPage = () => {
             </Typography>
             <div>
               <Grid container justifyContent="center">
-              <SearchBar />
+                <SearchBar
+                  searchedTeamMembers={searchedTeamMembers}
+                  setSearchedTeamMembers={setSearchedTeamMembers}
+                />
               </Grid>
             </div>
           </Container>
@@ -45,7 +59,7 @@ const MainPage = () => {
         <div>
           <Container maxWidth="lg" css={css`margin-top:100px`} >
             <Grid container spacing={4} align='center'>
-              {MOCK_DATA.map(cardInfo => (
+              {filteredTeamData.map(cardInfo => (
                 <Grid item key={cardInfo.id} xs={12} sm={6} md={4}>
                   <MediaCard cardInfo={cardInfo} />
                 </Grid>
